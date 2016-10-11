@@ -41,29 +41,29 @@ In order to use the post-mortem debugger, we must first import pdb and the funct
 
 Apparently something has gone wrong. The error mesage suggests that our data might have had invalid values in it, so let’s find out if that is case. To launch the interactive debugger, we simply make a new cell below the error and call pdb.pm(). Since pdb was imported before calling the malfunctioning function, this opens up an interactive interpreter at the location of the crash point, as can be seen below.
 
-![call to pdb.pm]({{ site.url }}/images/pdb_pm_debugger_call.png)
+![call to pdb.pm]({{ site.url }}{{ site.baseurl }}/images/pdb_pm_debugger_call.png)
 
 Since the error actually occurred rather deep within sklearn’s linear_models library (note the first line following the “>”, we first have to step “up” several times to get back to the line that we called to fit the linear model. The pdb command to do this is simply, “u”, hence the several “(Pdb) u”s in the code that follows. (Note that here we are making the assumption that the error was not in the linear_models library, but rather in our usage of it, which is generally a safe assumption to make when dealing with well maintained libraries.) The text following “(Pdb)” every few lines are the commands we’ve entered at the pdb prompt.
 
-![stepping up to the scope of your function]({{ site.url }}/images/pdb_pm_debugger_step_up.png)
+![stepping up to the scope of your function]({{ site.url }}{{ site.baseurl }}/images/pdb_pm_debugger_step_up.png)
 
 Now that we are at the crash point inside the function that we’ve written (line 13), we can figure out what went wrong with how we called the function. Informed by the original error message “Input contains NaN, infinity, or a value too large for dtype(‘float64’)”, we first check whether any of the values in the data set seem unreasonably large.
 
-![checking max value in data]({{ site.url }}/images/pdb_pm_debugger_data_max.png)
+![checking max value in data]({{ site.url }}{{ site.baseurl }}/images/pdb_pm_debugger_data_max.png)
 
 And in fact, trying to find the maximum value in the data matrix reveals there seems to be a NaN in there somewhere. Let’s figure if it’s just one or two points that were off, or if this is going to be a real problem.
 
-![counting nans in the data]({{ site.url }}/images/pdb_pm_debugger_count_nans.png)
+![counting nans in the data]({{ site.url }}{{ site.baseurl }}/images/pdb_pm_debugger_count_nans.png)
 
 Here we see that there are actually quite a few NaNs. Since there are 750 NaNs in a dataset that is only 1000 rows large, this seems like it’s going to be a bigger issue. As a final investigation we’ll now plot the data from within the debugger to try to see if the NaNs are randomly scattered about (in which case we could maybe get away with interpolating their values), or if there is some sort of pattern to them, which will inform us as to how we should clean the data before we work with it. 
 
-![making a plot inside pdb]({{ site.url }}/images/pdb_pm_debugger_plot.png)
+![making a plot inside pdb]({{ site.url }}{{ site.baseurl }}/images/pdb_pm_debugger_plot.png)
 
 This shows us that in fact the NaNs (indicated by gaps in the plots) actually come in large sections. If these data were from a sensor, this might indicate that something had gone wrong with the sensor for a couple of extended periods of time. We thus need to decide whether we should recollect the data, or if we should figure out how to deal with the missing records (for example, either ignoring them or interpolating their values). And all of this has been revealed quite quickly by pdb.pm().
 
 To quit the debugger, we can simply type “q” and hit Enter, which takes us back to the original notebook. 
 
-![quitting pdb]({{ site.url }}/images/pdb_pm_debugger_quit.png)
+![quitting pdb]({{ site.url }}{{ site.baseurl }}/images/pdb_pm_debugger_quit.png)
 
 My goal here has been to illustrate how useful, yet relatively simple to use, a post-mortem debugger can be, and to demonstrate the basics of using the one included in Python’s standard library. I’ll admit that pdb is not perfect, and that it lacks some features typically included in command line interfaces, such as tab completion and using the UP arrow to access previous statements, but it is still pretty nice. (Actually, the [ipdb](https://pypi.python.org/pypi/ipdb) module solves many of these problems, providing a debugger with a more IPython-like interface, but it is not included in Python’s standard library and must be installed separately -- though this is actually pretty straightforward.)
 
