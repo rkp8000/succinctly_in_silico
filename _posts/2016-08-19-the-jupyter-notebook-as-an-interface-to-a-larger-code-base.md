@@ -1,4 +1,5 @@
 ---
+layout: post
 title: the jupyter notebook as an interface to a larger code base
 description: another great use for jupyter
 comments: true

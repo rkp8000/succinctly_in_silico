@@ -1,4 +1,5 @@
 ---
+layout: post
 title: the jupyter notebook as a sandbox for code
 description: basic introduction to using jupyter
 comments: true

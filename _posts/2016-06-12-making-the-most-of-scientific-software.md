@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "making the most of scientific software"
 description: "what this blog is all about"
 comments: true

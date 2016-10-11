@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "the scientific stack"
 description: "enumeration of the minimum computational tools that a scientist should have"
 comments: true
