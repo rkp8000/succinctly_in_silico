@@ -37,7 +37,7 @@ def fit_linear_model(DATA_FILE):
 
 In order to use the post-mortem debugger, we must first import pdb and the function of interest (the ```%matplotlib inline``` statement enables plotting within the notebook), then call the function:
 
-![original error traceback]({{ site.baseurl }}/images/pdb_pm_traceback.png)
+![original error traceback]({{ site.url }}/images/pdb_pm_traceback.png)
 
 Apparently something has gone wrong. The error mesage suggests that our data might have had invalid values in it, so let’s find out if that is case. To launch the interactive debugger, we simply make a new cell below the error and call pdb.pm(). Since pdb was imported before calling the malfunctioning function, this opens up an interactive interpreter at the location of the crash point, as can be seen below.
 
