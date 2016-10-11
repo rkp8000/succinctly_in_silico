@@ -5,10 +5,6 @@ description: "enumeration of the minimum computational tools that a scientist sh
 comments: true
 ---
 
-#### Test variables 
-test_var: {{ site.test_var }}
-baseurl: {{ site.baseurl }}
-
 One of the key factors in developing a smooth scientific workflow is asking what software is most worthwhile to have around when writing scientific code. I've spent a fair bit of time thinking about this lately, and in this post I’ll share some of my conclusions.
 
 Before I go into the details, though, I’d like to remark that technically you only need to know the basic syntax for a single programming language to build anything you want, since all code, no matter how complex, is fundamentally composed of a large number of simple components. This reductionist take on writing code was my perspective early on and in my experience embodies that of many beginning scientific coders. After following this principle for some time, however, I found that the codebase I was developing inexorably waxed a more and more rickety construction. Making small changes to one part made seemingly unrelated parts completely fail, debugging became a nightmare that could ruin several days of work, and most importantly, even when my code didn’t crash I found that I simply didn't trust the results.

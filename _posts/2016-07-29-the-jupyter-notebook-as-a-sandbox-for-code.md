@@ -9,7 +9,7 @@ The [Jupyter Notebook web application](http://jupyter.org/) that I mentioned in 
 
 For those of you that haven’t heard of the Jupyter Notebook, it’s an application that uses the web browser as its interface and looks something like this:
 
-![jupyter sandbox example]({{ site.url }}/images/jupyter_sandbox_example.png)
+![jupyter sandbox example]({{ site.url }}{{ site.baseurl }}/images/jupyter_sandbox_example.png)
 
 Basically, it allows you to type up little blocks of code called *cells*, run them, and view textual, graphical, and even interactive results directly inside your web browser. These features make it perfect for use as a code *sandbox*, that is, an environment where you "mess around" that’s separate from your main codebase. For example, in just the past week I used my code sandbox to figure out how to extract the path of one directory relative to another, to slice an array according to two different conditions, to organize a figure’s subplots so that they span multiple columns, to display a transparent cylinder on a 3D plot, to load data from a database, to plot a few rows of a biological dataset, to format a datetime string exactly how I wanted, and to retrieve the traceback when an exception was raised. And a reliable code sandbox is a nice place to go for all of these miscellaneous tasks.
 
