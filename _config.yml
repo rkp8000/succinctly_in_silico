@@ -13,15 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: succinctly in silico test
+title: succinctly in silico 
 email: 
 description: > # this means to ignore newlines until "baseurl:"
   A blog about reproducible research.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 github_username:  rkp8000
-test_var: abc123 
-base-url: "/succinctly_in_silico"
 
 # Build settings
 markdown: kramdown
