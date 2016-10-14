@@ -6,3 +6,6 @@ _site
 .DS_store
 
 _config.yml
+
+.idea
+nohup.out
