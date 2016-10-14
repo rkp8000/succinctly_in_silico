@@ -1,4 +1,5 @@
 ---
+layout: post
 title: testing scientific code
 description: the basics of unit testing
 comments: true
