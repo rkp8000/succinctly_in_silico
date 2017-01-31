@@ -11,11 +11,11 @@ This time we’re going to walk through setting up a more complicated but more o
 
 Note that if you haven’t set up a Jupyter server yet you should check out my [previous post](https://rkp8000.github.io/succinctly_in_silico/2016/11/17/running-code-on-a-remote-server.html). What we'll do now is replace the self-signed-certificate-generating section detailed in that post with a more involved but more official way of generating a web certificate.
 
-## installing certbot, an automated tool for generating web certificates
+## installing certbot: an automated tool for generating web certificates
 
 To create a LetsEncrypt certificate you’ll need an ACME client tool. Instead of getting into the details of what this is, I’m just going to recommend *certbot*, which is the default client with the most documentation regarding our purposes surrounding it. Installing it is fairly straightforward on a Linux machine, but a little involved on a Mac. If your remote server is a Windows machine, things will be substantially more complicated, but a good place to start is [here](https://letsencrypt.org/docs/client-options/).
 
-### installing certbot on a Linux machine
+#### installing certbot on a Linux machine
 
 Installing `certbot` on Linux is done most easily by simply cloning (copying) the `certbot` repository from where it lives on GitHub onto your computer. You can do this using the program `git`, which you almost certainly have installed if you’re running Linux. Once you’ve [sshed](https://rkp8000.github.io/succinctly_in_silico/2016/11/17/running-code-on-a-remote-server.html) into the remote machine, `cd` into the directory `/opt` using
 
@@ -27,7 +27,7 @@ which is the default location for installing third-party software. Then download
 
 and enter your password. If you run the command `ls` you should see that there is a new directory inside `/opt` called `certbot`. 
 
-## installing certbot on a Mac
+#### installing certbot on a Mac
 
 Installing `certbot` on a Mac is a bit trickier since you’ll need to install it using the program `brew`, a command-line package manager that does not come preinstalled on Mac. If you have `brew` already, great. Otherwise you can install it by following the instructions [here](brewsite.com). A note about using `brew` for these purposes is that the commands we’ll be running can take several minutes sometimes, even on a fast computer, so you might have to be patient. Once you have `brew` installed, make sure you have permissions for `/usr/local`, using 
 
@@ -59,7 +59,7 @@ Next we need to use `certbot` to make a new certificate. Since we’ll put the c
 sudo chown my_username /usr/local
 ```
 
-### making a new certificate on Linux
+#### making a new certificate on Linux
 
 If you’re using Linux, next move into the directory in which you installed `certbot` using
 
@@ -85,7 +85,7 @@ IMPORTANT NOTES:
    Donating to EFF:                    https://eff.org/donate-le
 ```
 
-### making a new web certificate on Mac
+#### making a new web certificate on Mac
 
 If you’re using a Mac and you installed `certbot` through `brew`, then you can make a new certificate by runring the following command, regardless of what directory you’re in:
 
