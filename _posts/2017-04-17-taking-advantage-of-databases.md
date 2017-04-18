@@ -6,12 +6,8 @@ comments: true
 ---
 
 <style>
-.mbtablestyle {
-        border-collapse: collapse;
-
-   > table, td, th {
-        border: 1px solid black;
-        }
+table, th, td {
+   border: 1px solid black;
 }
 </style>
 
@@ -62,7 +58,7 @@ So what is a relational database? At its most basic, a relational database is a 
 |12|5|2017-01-07|2|pentagon|2.5|3.1|1.2|180|(0, 1, 0)|35.2|NH/20170107/2/110312_full.csv|
 |---
 |||||||||||||
-{:.mbtablestyle}
+
 
 As you can see, the table is defined by a set of fields that are listed at the top of each columns, and a set of rows, each of which contains a value for each column. We might also have a table called "subject", that would look something like this:
 
