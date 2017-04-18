@@ -5,6 +5,16 @@ description: "an introduction to relational databases"
 comments: true
 ---
 
+<style>
+.mbtablestyle {
+        border-collapse: collapse;
+
+   > table, td, th {
+        border: 1px solid black;
+        }
+}
+</style>
+
 So far we've focused mostly on the code side of scientific analysis, but sooner or later you're probably going to start working with data. Since data can wax overwhelming quickly, especially in the present age of high-throughput experiments and dense sensor arrays, it's important to think through how to manage it and interact with it from your codebase from the get-go.
 
 ### scientific data
