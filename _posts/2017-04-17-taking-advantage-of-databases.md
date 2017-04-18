@@ -52,12 +52,12 @@ So what is a relational database? At its most basic, a relational database is a 
 |12|5|2017-01-07|2|pentagon|2.5|3.1|1.2|180|(0, 1, 0)|35.2|NH/20170107/2/110312_full.csv|
 |---
 |||||||||||||
-{: rules="groups"}
+{:.mbtablestyle}
 
 As you can see, the table is defined by a set of fields that are listed at the top of each columns, and a set of rows, each of which contains a value for each column. We might also have a table called "subject", that would look something like this:
 
 |id|name|code|age|height|
-|-
+|:-|:--:|:--:|:-:|:----:|
 |1|Pinkus Johanssen|PJ|46|68|
 |2|Artemis Mueller|AM|32|60|
 |3|Jackie Jones|JJ|26|61|
