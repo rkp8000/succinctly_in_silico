@@ -32,7 +32,7 @@ While there are many types of database out there, the one that has best stood th
 
 So what is a relational database? At its most basic, a relational database is a set of fancy spreadsheets. Instead of spreadsheets, however, they're called tables. Each table is defined by its columns, or fields, and each data element takes the form of a row. Say, for instance, we were doing an experiment in which we were showing images of different shapes to people on a screen and recording some physiological response. We might store the data in two tables. First, we might have a table called "trial" in the database that looked something like this:
 
-|id|subject_id|date|trial_block|shape|x_position|y_position|size|rotation|color|mean_response|full_data_file|
+|id|subj_id|date|trial_block|shape|x_pos|y_pos|size|rot|color|mean_resp|full_data_file|
 |:-|:--------:|:--:|:---------:|:---:|:--------:|:--------:|:--:|:------:|:---:|:-----------:| ------------:|
 |1|1|2017-01-02|1|square|3.6|7.1|3.3|45|(0, 1, 0)|12.5|PJ/20170102/1/110521_full.csv|
 |2|3|2017-01-03|1|hexagon|1.3|4.2|6.1|90|(1, 1, 0)|19.1|JJ/20170103/1/121025_full.csv|
@@ -168,7 +168,7 @@ Select the shapes presented for all the trials where the mean response was betwe
 
 ```
     shapes = session.query(Trial.shape).filter(
-        Trial.mean_response.between(30, 40))
+        Trial.mean_resp.between(30, 40))
 ```
 
 Select all trials from the first trial blocks of all subjects:
@@ -181,7 +181,7 @@ Select the mean responses for all AM's trials in which the rotation was 90 degre
 
 ```
     mean_responses = session.query(Trial.mean_response).join(Subject).filter(
-        Subject.code == 'AM', Trial.rotation == 90)
+        Subject.code == 'AM', Trial.rot == 90)
 ```
 
 If you were to try writing these queries in the context of the directory hierarchy you would almost certainly find yourself quickly overwhelmed, and you would probably have to do a lot more testing to ensure that you weren't making any mistakes. Further, for a real a scientific project we'd likely have many more tables, each corresponding to a class of "units" in the project, and keeping track of them without a relational database would quickly become a big mess.
