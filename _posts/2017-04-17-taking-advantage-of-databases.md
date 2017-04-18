@@ -34,30 +34,17 @@ So what is a relational database? At its most basic, a relational database is a 
 |id|subject_id|date|trial_block|shape|x_position|y_position|size|rotation|color|mean_response|full_data_file|
 |:-|:--------:|:--:|:---------:|:---:|:--------:|:--------:|:--:|:------:|:---:|:-----------:| ------------:|
 |1|1|2017-01-02|1|square|3.6|7.1|3.3|45|(0, 1, 0)|12.5|PJ/20170102/1/110521_full.csv|
-|--|----------|----|-----------|-----|----------|----------|----|--------|-----|-------------|--------------|
 |2|3|2017-01-03|1|hexagon|1.3|4.2|6.1|90|(1, 1, 0)|19.1|JJ/20170103/1/121025_full.csv|
-|---
 |3|3|2017-01-03|1|pentagon|3.3|1.1|5.5|45|(1, 0, 1)|39.4|JJ/20170103/1/125622_full.csv|
-|---
 |4|3|2017-01-04|2|triangle|2.3|1.5|1.1|0|(0, 1, 1)|15.4|JJ/20170104/2/093131_full.csv|
-|---
 |5|2|2017-01-05|1|square|9.2|1.3|3.7|45|(1, 0, 0)|18.7|AM/20170105/1/094101_full.csv|
-|---
 |6|2|2017-01-05|1|pentagon|2.5|2.1|9.3|180|(0, 1, 1)|34.8|AM/20170105/1/095758_full.csv|
-|---
 |7|2|2017-01-05|2|square|6.2|0.3|3.7|90|(1, 0, 1)|12.7|AM/20170105/2/102115_full.csv|
-|---
 |8|2|2017-01-05|2|pentagon|3.5|3.1|18|180|(0, 1, 1)|39.1|AM/20170105/2/112278_full.csv|
-|---
 |9|2|2017-01-06|3|square|6.2|0.3|3.7|90|(1, 0, 1)|12.7|AM/20170106/3/092751_full.csv|
-|---
 |10|2|2017-01-06|3|pentagon|3.5|3.1|18|180|(0, 1, 1)|39.1|AM/20170106/3/102955_full.csv|
-|---
 |11|5|2017-01-07|1|triangle|3.8|0.9|4.4|90|(0, 1, 0)|21.1|NH/20170107/1/100218_full.csv|
-|---
 |12|5|2017-01-07|2|pentagon|2.5|3.1|1.2|180|(0, 1, 0)|35.2|NH/20170107/2/110312_full.csv|
-|---
-|||||||||||||
 
 
 As you can see, the table is defined by a set of fields that are listed at the top of each columns, and a set of rows, each of which contains a value for each column. We might also have a table called "subject", that would look something like this:
@@ -69,8 +56,6 @@ As you can see, the table is defined by a set of fields that are listed at the t
 |3|Jackie Jones|JJ|26|61|
 |4|Nora Hubermeister|NH|23|59|
 |5|Elmer Edgerton|EE|24|65|
-||||||
-{: rules="groups"}
 
 What makes the tables *fancy* is that they can connect to each other via relationships. In the above, for example, the "subject_id" field of the "trial" table relates (i.e., refers) to the "id" field of the "subject" table. Having such relations greatly simplifies queries one makes to the database. Note also that not every bit of data needs to be directly stored in the rows and columns of the relational database. The full data files, for instance, are stored as external .csv files. However, as we will show in a minute, it is quite nice to have at least a good portion of one’s data stored in the database itself.
 
