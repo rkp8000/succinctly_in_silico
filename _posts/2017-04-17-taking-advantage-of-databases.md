@@ -63,6 +63,8 @@ As you can see, the table is defined by a set of fields that are listed at the t
 |3|Jackie Jones|JJ|26|61|
 |4|Nora Hubermeister|NH|23|59|
 |5|Elmer Edgerton|EE|24|65|
+||||||
+{: rules="groups"}
 
 What makes the tables *fancy* is that they can connect to each other via relationships. In the above, for example, the "subject_id" field of the "trial" table relates (i.e., refers) to the "id" field of the "subject" table. Having such relations greatly simplifies queries one makes to the database. Note also that not every bit of data needs to be directly stored in the rows and columns of the relational database. The full data files, for instance, are stored as external .csv files. However, as we will show in a minute, it is quite nice to have at least a good portion of one’s data stored in the database itself.
 
