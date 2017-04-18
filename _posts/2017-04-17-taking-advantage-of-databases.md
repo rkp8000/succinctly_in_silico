@@ -167,21 +167,21 @@ Here's how we might perform a couple of other queries:
 Select the shapes presented for all the trials where the mean response was between 30 and 40:
 
 ```
-    shapes = session.query(Trial.shape).filter(
-        Trial.mean_resp.between(30, 40))
+shapes = session.query(Trial.shape).filter(
+    Trial.mean_resp.between(30, 40))
 ```
 
 Select all trials from the first trial blocks of all subjects:
 
 ```
-    trials = session.query(Trial).filter(Trial.trial_block == 1)
+trials = session.query(Trial).filter(Trial.trial_block == 1)
 ```
 
 Select the mean responses for all AM's trials in which the rotation was 90 degrees:
 
 ```
-    mean_responses = session.query(Trial.mean_response).join(Subject).filter(
-        Subject.code == 'AM', Trial.rot == 90)
+mean_responses = session.query(Trial.mean_response).join(Subject).filter(
+    Subject.code == 'AM', Trial.rot == 90)
 ```
 
 If you were to try writing these queries in the context of the directory hierarchy you would almost certainly find yourself quickly overwhelmed, and you would probably have to do a lot more testing to ensure that you weren't making any mistakes. Further, for a real a scientific project we'd likely have many more tables, each corresponding to a class of "units" in the project, and keeping track of them without a relational database would quickly become a big mess.
