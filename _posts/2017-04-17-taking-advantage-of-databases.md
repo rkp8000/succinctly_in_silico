@@ -26,7 +26,7 @@ While there are many types of database out there, the one that has best stood th
 So what is a relational database? At its most basic, a relational database is a set of fancy spreadsheets. Instead of spreadsheets, however, they're called tables. Each table is defined by its columns, or fields, and each data element takes the form of a row. Say, for instance, we were doing an experiment in which we were showing images of different shapes to people on a screen and recording some physiological response. We might store the data in two tables. First, we might have a table called "trial" in the database that looked something like this:
 
 |id|subject_id|date|trial_block|shape|x_position|y_position|size|rotation|color|mean_response|full_data_file|
-|:--------------- |:----------------:| -----------:|
+|:-|:--------:|:--:|:---------:|:---:|:--------:|:--------:|:--:|:------:|:---:|:-----------:| ------------:|
 |1|1|2017-01-02|1|square|3.6|7.1|3.3|45|(0, 1, 0)|12.5|PJ/20170102/1/110521_full.csv|
 |---
 |2|3|2017-01-03|1|hexagon|1.3|4.2|6.1|90|(1, 1, 0)|19.1|JJ/20170103/1/121025_full.csv|
@@ -50,6 +50,8 @@ So what is a relational database? At its most basic, a relational database is a 
 |11|5|2017-01-07|1|triangle|3.8|0.9|4.4|90|(0, 1, 0)|21.1|NH/20170107/1/100218_full.csv|
 |---
 |12|5|2017-01-07|2|pentagon|2.5|3.1|1.2|180|(0, 1, 0)|35.2|NH/20170107/2/110312_full.csv|
+|---
+|||||||||||||
 {: rules="groups"}
 
 As you can see, the table is defined by a set of fields that are listed at the top of each columns, and a set of rows, each of which contains a value for each column. We might also have a table called "subject", that would look something like this:
